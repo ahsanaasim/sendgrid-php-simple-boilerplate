@@ -5,7 +5,7 @@ require_once('./cors.php');
 $email = new \SendGrid\Mail\Mail();
 $email->setFrom("fasem16135@bymercy.com", "Example User");
 
-$sendgrid = new \SendGrid("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");
+$sendgrid = new \SendGrid("API_KEY");
 
 if(isset($_POST['toEmail']) && isset($_POST['subject']) && isset($_POST['message'])) {
   $to = $_POST['toEmail'];
