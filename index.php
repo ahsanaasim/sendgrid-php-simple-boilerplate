@@ -1,6 +1,15 @@
 <?php
 require_once('./sendgrid-php/sendgrid-php.php');
 
+/* Handle CORS */
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: X-Requested-With,Authorization,Content-Type');
+header('Access-Control-Max-Age: 86400');
+if (strtolower($_SERVER['REQUEST_METHOD']) == 'options') {
+    exit();
+}
+
 $email = new \SendGrid\Mail\Mail();
 $email->setFrom("fasem16135@bymercy.com", "Example User");
 
